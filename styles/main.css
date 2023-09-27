@@ -25,3 +25,10 @@ input {
     width: 200px;
     margin: 8px 0;
 }
+
+p#mensagem {
+    margin-top: 16px;
+    padding: 8px;
+    color: white;
+    background-color: none;
+}
