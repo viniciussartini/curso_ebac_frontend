@@ -49,6 +49,6 @@ function atualizaMediaTabela() {
         somaDasNotas += notas[i];
     }
     let mediaDasNotas = somaDasNotas / notas.length;
-    document.getElementById("media-final-valor").innerHTML = mediaDasNotas;
+    document.getElementById("media-final-valor").innerHTML = mediaDasNotas.toFixed(2);
     document.getElementById("media-final-resultado").innerHTML = mediaDasNotas >= notaMinima ? msgAprovado : msgReprovado;
 }
