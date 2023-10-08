@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --col1-conteudo: 0.5fr;
+    --col2-conteudo: 8.75fr;
+}
+
 body {
     background-color: darkgray;
     max-height: 100vh;
@@ -36,12 +41,16 @@ header > img {
     text-align: center;
 }
 
-.lista-menu {
+#lista-menu1,
+#lista-menu2,
+#lista-menu3,
+#lista-menu4 {
     position: absolute;
     display: none;
     list-style-type: none;
     background-color: aquamarine;
     width: 200px;
+    border-radius: 0 0 10px 10px;
 }
 
 .menu-lateral {
@@ -53,7 +62,7 @@ header > img {
     background-color: blue;
     height: 80vh;
     display: grid;
-    grid-template-columns: 1fr 8fr;
+    grid-template-columns: var(--col1-conteudo) var(--col2-conteudo);
     grid-template-rows: 1fr;
     grid-template-areas: 
         "menu-esquerdo sections"
