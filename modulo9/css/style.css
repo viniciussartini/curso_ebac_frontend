@@ -58,7 +58,7 @@ header > img {
     background-color: blue;
     height: 80vh;
     display: grid;
-    grid-template-columns: 0.5fr 8.75fr;
+    grid-template-columns: 0.5fr 9.5fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
         "menu-esquerdo sections"

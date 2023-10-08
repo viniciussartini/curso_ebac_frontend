@@ -1,45 +1,49 @@
 $(document).ready(function() {
 
-    $("h2").each(function() {
-        $(this).on("click mouseout",function() {
-            let idMenu = $(this).attr("id")
-            switch (idMenu) {
-                case "titulo-menu-cabecalho1":
-                    $("#lista-menu1").slideToggle(500);
+    $(".titulo-menu-cabecalho").each(function() {
+        let tituloMenu = this.innerHTML;
+        $(this).click(function() {
+            switch (tituloMenu) {
+                case "Menu 1":
+                    $("#lista-menu1").slideDown();
                     break;
-                case "titulo-menu-cabecalho2":
-                    $("#lista-menu2").slideToggle(500);
+                case "Menu 2":
+                    $("#lista-menu2").slideDown();
                     break;
-                case "titulo-menu-cabecalho3":
-                    $("#lista-menu3").slideToggle(500);
+                case "Menu 3":
+                    $("#lista-menu3").slideDown();
                     break;
-                case "titulo-menu-cabecalho4":
-                    $("#lista-menu4").slideToggle(500);
+                case "Menu 4":
+                    $("#lista-menu4").slideDown();
                     break;
                 default:
                     break;
             }
-        })
-    })
-
-    $(".menu-lateral").click(function() {
-        $(this).animate(
-            {
-                width: "1.25fr"
-            }, {
-                duration: 500,
-                easing: "swing",
-                step: function(width) {
-                    console.log(1);
-                    $(".container-conteudo").css("grid-template-columns", `${0.5 + width}fr ${(width-1)+8}fr`);
-                }, 
-                progress: function() {
-                    console.log("2");
-                },
-                complete: function() {
-                    console.log("3");
-                }
+        }).mouseout(function() {
+            switch (tituloMenu) {
+                case "Menu 1":
+                    $("#lista-menu1").slideUp();
+                    break;
+                case "Menu 2":
+                    $("#lista-menu2").slideUp();
+                    break;
+                case "Menu 3":
+                    $("#lista-menu3").slideUp();
+                    break;
+                case "Menu 4":
+                    $("#lista-menu4").slideUp();
+                    break;
+                default:
+                    break;
             }
-        )
-    })
+        });
+    });
+
+    $(".menu-lateral").mouseover(function() {
+        console.log("Entrei");
+        $(".container-conteudo").css("grid-template-columns", "1fr 8fr");
+    }).mouseout(function() {
+        console.log("Sai");
+        $(".container-conteudo").css("grid-template-columns", "0.5fr 9.5fr");
+    });
 });
