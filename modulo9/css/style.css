@@ -6,56 +6,64 @@
 
 body {
     background-color: darkgray;
-    display: grid;
-    grid-template-columns: 1fr 8fr;
-    grid-template-rows: 15vh 75vh 10vh;
-    grid-template-areas: 
-        "cabecalho cabecalho"
-        "menu-esquerdo conteudo"
-        "rodape rodape"
-    ;
+    max-height: 100vh;
+    height: 100%;
 }
 
 header  {
     background-color: yellow;
-    grid-area: cabecalho;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-header > div {
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10vw;
 }
 
-header div > img {
+header > img {
     width: 56px;
 }
 
-header > nav {
+.menu-cabecalho {
     display: flex;
+    position: relative;
     justify-content: center;
     gap: 5vw;
 }
 
-aside {
+.container-menu-cabecalho {
+    background-color: aquamarine;
+    width: 200px;
+    text-align: center;
+}
+
+.lista-menu {
+    position: absolute;
+    display: none;
+    list-style-type: none;
+    background-color: aquamarine;
+    width: 200px;
+}
+
+.menu-lateral {
     background-color: green;
     grid-area: menu-esquerdo;
 }
 
-main {
+.container-conteudo {
     background-color: blue;
-    grid-area: conteudo;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "menu-esquerdo sections"
+    ;
 }
 
-.container {
+.container-sections {
     background-color: darkgrey;
+    grid-area: sections;
     display: grid;
-    max-height: 100%;
-    height: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 40% 40% 20%;
     grid-template-areas: 
@@ -63,6 +71,10 @@ main {
         "conteudo2 conteudo3"
         "conteudo4 conteudo4"
     ;
+}
+
+.container section > h3 {
+    padding: 8px;
 }
 
 #conteudo1 {
@@ -87,5 +99,5 @@ main {
 
 footer {
     background-color: red;
-    grid-area: rodape;
+    height: 10vh;
 }
