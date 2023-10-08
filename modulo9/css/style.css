@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --col1-conteudo: 0.5fr;
-    --col2-conteudo: 8.75fr;
-}
-
 body {
     background-color: darkgray;
     max-height: 100vh;
@@ -37,6 +32,7 @@ header > img {
 
 .container-menu-cabecalho {
     background-color: aquamarine;
+    position: relative;
     width: 200px;
     text-align: center;
 }
@@ -45,11 +41,11 @@ header > img {
 #lista-menu2,
 #lista-menu3,
 #lista-menu4 {
+    background-color: aquamarine;
     position: absolute;
     display: none;
     list-style-type: none;
-    background-color: aquamarine;
-    width: 200px;
+    width: 100%;
     border-radius: 0 0 10px 10px;
 }
 
@@ -62,7 +58,7 @@ header > img {
     background-color: blue;
     height: 80vh;
     display: grid;
-    grid-template-columns: var(--col1-conteudo) var(--col2-conteudo);
+    grid-template-columns: 0.5fr 8.75fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
         "menu-esquerdo sections"

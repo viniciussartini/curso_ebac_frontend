@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $("h2").each(function() {
-        $(this).on("mouseover mouseout",function() {
+        $(this).on("click mouseout",function() {
             let idMenu = $(this).attr("id")
             switch (idMenu) {
                 case "titulo-menu-cabecalho1":
@@ -22,24 +22,22 @@ $(document).ready(function() {
         })
     })
 
-
-    let passoTeste = 0;
     $(".menu-lateral").click(function() {
         $(this).animate(
             {
                 width: "1.25fr"
             }, {
                 duration: 500,
-                easing: "linear",
-                step: function(x) {
-                        console.log(x);
-                        passoTeste = x;
-                        console.log(passoTeste);
-                        let pegaCol1 = $("body").css("--col1-conteudo");
-                        let pegaCol2 = $("body").css("--col2-conteudo");
-                        let resultadoColuna1 = parseFloat(pegaCol1.replace("fr","")) + x;
-                        let resultadoColuna2 = parseFloat(pegaCol2.replace("fr","")) - x;
-                        $(".container-conteudo").css("grid-template-columns", `${resultadoColuna1}fr ${resultadoColuna2}fr`);
+                easing: "swing",
+                step: function(width) {
+                    console.log(1);
+                    $(".container-conteudo").css("grid-template-columns", `${0.5 + width}fr ${(width-1)+8}fr`);
+                }, 
+                progress: function() {
+                    console.log("2");
+                },
+                complete: function() {
+                    console.log("3");
                 }
             }
         )
